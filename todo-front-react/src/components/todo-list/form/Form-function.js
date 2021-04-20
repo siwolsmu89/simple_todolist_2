@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 // smart component + dumb component
 // 액션 처리 및 화면 표시를 함께 담당
 // 원래라면 화면 표시를 위한 dumb 컴포넌트를 별도로 분리해야 하지만, 이미 작은 컴포넌트이므로 화면 표시까지 smart component 내에서 처리
-let Form = ({ dispatch}) => {
+let Form = ({ dispatch }) => {
     // 변하는 값이므로 let
     let input
 
