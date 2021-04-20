@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import Palette from "./components/todo-list/palette/Palette";
 import {selectColor} from "./components/actions/colorActions";
 
-// root component
+// smart component
 class App extends Component {
 
     render() {
