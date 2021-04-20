@@ -3,7 +3,11 @@ import './Form.css';
 import { addTodo } from "../../actions/todoActions";
 import { connect } from "react-redux";
 
+// smart component
+// 액션 처리 담당
+// 원래라면 화면 표시를 위한 dumb 컴포넌트를 별도로 분리해야 하지만, 이미 작은 컴포넌트이므로 화면 표시까지 smart component 내에서 처리
 let Form = ({ dispatch}) => {
+    // 변하는 값이므로 let
     let input
 
     const onKeyPress = (e) => {
@@ -12,6 +16,7 @@ let Form = ({ dispatch}) => {
         }
     }
 
+    // 액션 생성자의 addTodo() 함수를 호출하여 액션을 생성하고 dispatch() 함수로 스토어에 액션을 전달
     const onCreate = () => {
         dispatch(addTodo(input.value));
         input.value = '';
@@ -27,6 +32,7 @@ let Form = ({ dispatch}) => {
     );
 };
 
+// 스토어에 연결
 Form = connect()(Form);
 
 export default Form;

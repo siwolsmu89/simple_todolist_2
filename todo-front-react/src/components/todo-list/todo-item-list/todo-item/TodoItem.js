@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
 
+// dumb component
 class TodoItem extends Component {
 
+    // checked 상태가 변경될 때만 업데이트
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.checked !== nextProps.checked;
     }

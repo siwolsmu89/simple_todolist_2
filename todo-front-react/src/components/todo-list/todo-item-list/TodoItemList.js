@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import TodoItem from './todo-item/TodoItem.js'
 
+// dumb component
 class TodoItemList extends Component {
 
+    // to-do 목록이 변경될 때만 업데이트
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.todos !== nextProps.todos;
     }

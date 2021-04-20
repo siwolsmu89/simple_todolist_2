@@ -1,6 +1,7 @@
 import {ADD_TODO, CHECK_TODO, REMOVE_TODO} from "../actions/todoActions";
 import {SELECT_COLOR} from "../actions/colorActions";
 
+// 초기 state 세팅
 const initialState = {
     todos: [
         { id: 0, text: '리액트 소개', checked: false, color: '#343a40' },
@@ -15,6 +16,7 @@ const initialState = {
     ]
 }
 
+// to-do 액션과 관련된 처리를 담당하는 리듀서
 function todos(state, action) {
     const { todos, colors } = state;
     switch (action.type) {
@@ -45,6 +47,7 @@ function todos(state, action) {
     }
 }
 
+// color 액션과 관련된 처리를 담당하는 리듀서
 function colors(state, action) {
     const { colors } = state;
     switch (action.type) {
@@ -66,6 +69,9 @@ function colors(state, action) {
     }
 }
 
+// 파라미터로 넘겨받은 state 없으면 initialState 사용
+// to-do 리듀서와 color 리듀서를 통합한 루트 리듀서
+// state 객체를 조각화하여 필요한 하위 리듀서에게 처리 위임
 export default function todoApp(state = initialState, action) {
     return {
         todos: todos(state, action),
